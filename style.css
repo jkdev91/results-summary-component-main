@@ -1,24 +1,227 @@
 
 
+/* * {
+    background-color: rgba(0, 0, 255, 0.2) !important;
+  } */
+
+
+  @font-face {
+    font-family:'Hanken Grotesk';
+    src: url(assets\fonts\static\HankenGrotesk-Medium.ttf) format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family:'Hanken Grotesk';
+    src: url(assets\fonts\static\HankenGrotesk-Bold.ttf) format('truetype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Hanken Grotesk';
+    src: url(assets\fonts\static\HankenGrotesk-ExtraBold.ttf) format('truetype');
+    font-weight: 800;
+}
+
+
+
+:root {
+    /*primary color*/
+    --LightRed: hsl(0, 100%, 67%);
+    --OrangeyYellow: hsl(39, 100%, 56%);
+    --GreenTeal: hsl(166, 100%, 37%);
+    --CobaltBlue: hsl(234, 85%, 45%);
+
+    /* Add metric backgrounds-color with transparency */
+    --LightRedBg: hsla(0, 100%, 67%, 0.1);
+    --OrangeyYellowBg: hsla(39, 100%, 56%, 0.1);
+    --GreenTealBg: hsla(166, 100%, 37%, 0.1);
+    --CobaltBlueBg: hsla(234, 85%, 45%, 0.1);
+
+    /*Gradients*/
+    --BackgroundLightSlateBlue: hsl(252, 100%, 67%);
+    --BackgroundLightRoyalBlue: hsl(241, 81%, 54%);
+    --CircleVioletBlue: hsla(256, 72%, 46%, 1);
+    --CirclePersianBlue : hsla(241, 72%, 46%, 0);  
+    
+    /*Neutral*/
+    --White: hsl(0, 0%, 100%);
+    --PaleBlue: hsl(221, 100%, 96%);
+    --LightLavender: hsl(241, 100%, 89%);
+    --DarkGrayBlue: hsl(224, 30%, 27%);
+    --color-blue-gray : hsl(230, 10%, 63%);
+}
+
+html {
+    font-size: 16px;
+}
+
+
 
 body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+.container {
+    display: grid ;
+    grid-template-columns: 1fr 1fr;
+    max-width: 600px;
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.1);
+}
+
+.container__result {
+    background: linear-gradient(180deg, var(--BackgroundLightSlateBlue), var(--BackgroundLightRoyalBlue));
+    padding: 30px;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    align-items: center;
+    text-align: center;
+    border-radius: 0 25px 25px 0;
 }
 
+.container__result h2 {
+    color: var(--LightLavender);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
 
-.container-component {
+.score-circle {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(180deg, var(--CircleVioletBlue), var(--CirclePersianBlue));
+    border-radius: 50%;
     display: flex;
-    border:  2px  black;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex: 1;
+    margin: 20px 0;
+}
 
+.score {
+    color: var(--White);
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.score-total {
+    color: var(--LightLavender);
+    margin-top: 5px;
+    font-weight: 700;
+}
+
+.container__result h3 {
+    color: var(--White);
+    font-size: 24px;
+    margin: 20px 0 10px;
+    font-weight: 700;
+}
+
+.container__result p {
+    color: var(--LightLavender);
+    padding: 10px;
+    font-size: 16px;
+    max-width: 260px;
+    margin: 0;
+    font-weight: 500;
+}
+
+/*summary component*/
+
+.container__summary {
+    padding: 30px;
+}
+
+.metric {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+
+.metric-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    /* color: var(--LightRed); */
+}
+
+
+.metric-reaction {
+    background-color: var(--LightRedBg);
+}
+
+.text-1 {
+    color: var(--LightRed);
+}
+
+.metric-memory {
+    background-color: var(--OrangeyYellowBg);
+}
+
+.text-2 {
+    color: var(--OrangeyYellow);
+}
+
+.metric-verbal {
+    background-color: var(--GreenTealBg);
+}
+
+.text-3 {
+    color: var(--GreenTeal);
+}
+
+
+.metric-visual {
+    background-color: var(--CobaltBlueBg);
+}
+
+.text-4 {
+    color: var(--CobaltBlue);
+}
+
+
+.score-display {
+    color: var(--DarkGrayBlue);
+    font-weight: 700;
+}
+
+.score-max {
+    color: var(--color-blue-gray);
+    font-weight: 700;
 }
 
 
 
+.continue-btn {
+    background: var(--DarkGrayBlue);
+    color: var(--White);
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+    margin-top: 20px;
+}
+
+.continue-btn:hover {
+    background: var(--BackgroundLightRoyalBlue);
+}
 
 
 /***** style footer ****/
