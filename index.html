@@ -11,48 +11,69 @@
 </head>
 
 <body>
-  <div class="container-component">
-    <div class="container-component__result">
+  <div class="container">
+    <div class="container__result">
       <h2>Your Result</h2>
-      <div class="resultat">
-        <p>76</p>
-        <p>of 100</p>
+      <div class="score-circle">
+        <div class="score">76</div>
+        <div class="score-total">of 100</div>
       </div>
       
       <div>
-        <p>Great</p>
-        <p>You scored higher than 65% of the people who have taken these tests.</p>
-        
+        <h3>Great</h3>
+        <p>You scored higher than 65% of the people who have taken these tests.</p>      
       </div>
-  
     </div>
-    <div class="container-component__summary">
+    <div class="container__summary">
       <h2>Summary</h2>
-    
-      <li>
-        <span>Reaction</span> 
-        <span>80 / 100</span>
-      </li>
-      <li>
-        <span>Memory</span>
-        <span>92 / 100</span>
-      </li>
-      <li>
-        <span>Verbal</span>
-        <span>61 / 100</span>
-      </li>
-      <li>
-        <span>Visual</span>
-        <span>72 / 100</span>
-      </li>
+      <div class="metric metric-reaction">
+        <div class="metric-left" >
+          <img src="assets\images\icon-reaction.svg" alt="">
+          <span class="text-1">Reaction</span>  
+        </div>
+        <div>
+          <span class="score-display">80</span>
+          <span class="score-max">/ 100</span>
+      </div>
+      </div>
+      <div class="metric metric-memory">
+        <div class="metric-left">
+          <img src="assets\images\icon-memory.svg" alt="">
+          <span class="text-2">Memory</span>
+        </div> 
+        <div> 
+          <span class="score-display">92</span>
+          <span class="score-max">/ 100</span>
+        </div>
+      </div>
+      <div class="metric metric-verbal">
+        <div class="metric-left">
+          <img src="assets\images\icon-verbal.svg" alt="">
+          <span class="text-3">Verbal</span>
+        </div>
+        <div>
+          <span class="score-display">61</span>
+          <span class="score-max">/ 100</span>
+        </div>
+      </div>
+      <div class="metric metric-visual">
+        <div class="metric-left">
+          <img src="assets\images\icon-visual.svg" alt="">
+          <span class="text-4">Visual</span>
+        </div>
+        <div>
+          <span class="score-display">72</span>
+          <span class="score-max">/ 100</span>
+        </div>
+      </div>
       
-      <button>Continue</button>
+      <button class="continue-btn">Continue</button>
     </div>
   </div>
 
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">DevJK</a>.
   </footer>
 </body>
 </html>
